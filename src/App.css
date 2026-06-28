@@ -1,0 +1,358 @@
+/* 全站基礎設定：日系簡約風格 */
+:root {
+  --primary-color: #1A365D;    /* 商務深邃藍 */
+  --secondary-color: #F7FAFC;  /* 質感暖米白 */
+  --accent-color: #ED8936;     /* 活力亮點橘 */
+  --text-color: #2D3748;       /* 內文深灰 */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* 讓點擊導覽列跳轉時有平滑滾動效果 */
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+  color: var(--text-color);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* 4. Sticky Header 導覽列樣式 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(26, 54, 93, 0.95); /* 深邃藍加上微透明 */
+  backdrop-filter: blur(5px); /* 磨砂玻璃效果 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .logo {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.site-header .nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-header .nav-menu a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+/* 滑鼠移上去時變白 */
+.site-header .nav-menu a:hover {
+  color: #ffffff;
+}
+
+/* 為了讓後面步驟的區塊有點高度可以測試滾動，先給 section 一個基礎內邊距 */
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 5. Hero Banner 主視覺區樣式 */
+.section-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh; /* 讓主視覺佔據螢幕高度的 70%，非常有氣勢 */
+  background-color: var(--secondary-color); /* 使用藍圖指定的質感暖米白 */
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.section-hero h1 {
+  font-size: 2.8rem; /* 醒目的大標題 */
+  color: var(--primary-color); /* 嚴謹專業的商務深邃藍 */
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.section-hero p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 800px; /* 限制寬度，避免文字太長在寬螢幕上變得很難閱讀 */
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+/* 核心按鈕 (CTA) 的高質感設計 */
+.cta-button {
+  background-color: var(--accent-color); /* 藍圖指定的活力亮點橘 */
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px; /* 圓角膠囊造型，親切、具同理心 */
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3); /* 帶有亮橘色的柔和陰影 */
+  transition: all 0.3s ease; /* 讓滑鼠移過去的特效很平滑 */
+}
+
+/* 滑鼠游標移上去時的微動效 */
+.cta-button:hover {
+  background-color: #dd6b20; /* 顏色稍微變深 */
+  transform: translateY(-3px); /* 微微向上懸浮 3 像素 */
+  box-shadow: 0 6px 20px rgba(237, 137, 54, 0.4); /* 陰影加深 */
+}
+
+/* 按鈕按下去時的視覺回饋 */
+.cta-button:active {
+  transform: translateY(-1px);
+}
+
+/* 全站統一的區塊標題樣式 */
+section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+/* 6-1. 痛點共鳴區樣式 */
+.section-pain {
+  background-color: #ffffff;
+}
+
+.section-pain ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap; /* 確保在小螢幕時會自動換行堆疊 */
+}
+
+/* 痛點卡片設計 */
+.section-pain li {
+  flex: 1;
+  min-width: 280px; /* 限制卡片最小寬度 */
+  max-width: 350px;
+  background: var(--secondary-color);
+  padding: 2.5rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color); /* 左側點綴一條活力亮點橘，暗示警示與痛點 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.7;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* 6-2. 關於導師區塊樣式 */
+.section-about {
+  background-color: var(--secondary-color); /* 灰白交錯，做出視覺層次 */
+  text-align: center;
+  border-radius: 12px;
+  padding: 5rem 2rem;
+}
+
+.section-about p {
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #4a5568;
+  line-height: 1.9;
+}
+
+/* 7. 核心服務/課程區塊樣式 */
+.section-courses {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* 課程主打焦點卡片 */
+.section-courses .courses-card {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 3.5rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  /* 使用較柔和的大範圍陰影，讓卡片有浮起來的立體感 */
+  box-shadow: 0 10px 30px rgba(26, 54, 93, 0.06); 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滑鼠移上卡片時的精緻視覺回饋 */
+.section-courses .courses-card:hover {
+  border-color: rgba(26, 54, 93, 0.2);
+  box-shadow: 0 15px 35px rgba(26, 54, 93, 0.1);
+}
+
+.section-courses p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.8;
+}
+
+/* 針對課程區塊內的 CTA 按鈕微調，確保置中表現 */
+.section-courses .cta-button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* 8. 精選知識庫區塊樣式 */
+.section-blog {
+  background-color: var(--secondary-color); /* 灰白交錯，拉出視覺節奏 */
+  border-radius: 12px;
+  padding: 5rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.section-blog ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 每一篇文章項目的包裝 */
+.section-blog li {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* 在文字前面加上精緻的 Emoji 文件小圖標 */
+.section-blog li::before {
+  content: "📄";
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* 滑鼠移入時的特效：文字變品牌深藍，整行微微向右偏移 */
+.section-blog li:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+/* 製作底部的活力亮點橘動態底線 */
+.section-blog li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform: scaleX(0); /* 預設寬度為 0 */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* 滑鼠移入時，底線由左至右展開 */
+.section-blog li:hover::after {
+  transform: scaleX(1);
+}
+
+/* 11. 頁尾聯絡區樣式 */
+.site-footer {
+  background-color: var(--primary-color); /* 商務深邃藍 */
+  color: #e2e8f0;
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-top: 4px solid var(--accent-color); /* 頂部用一條活力橘細邊勾勒，增加設計感 */
+}
+
+.site-footer p {
+  font-size: 1rem;
+}
+
+/* 洽詢表單連結美化 */
+.site-footer a {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  transition: color 0.2s ease;
+}
+
+/* 滑鼠移入表單連結時變橘色 */
+.site-footer a:hover {
+  color: var(--accent-color);
+}
+
+/* 12. 基本 RWD 響應式調整 */
+@media (max-width: 768px) {
+  /* 手機版：讓 Header 導覽列變成上下排 */
+  .site-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .site-header .nav-menu {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* 手機版：縮小主視覺字級，避免溢出 */
+  .section-hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-hero p {
+    font-size: 1.05rem;
+  }
+
+  /* 手機版：讓痛點卡片由並排變成單欄垂直堆疊 */
+  .section-pain ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-pain li {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* 手機版：縮小各區塊內邊距 */
+  section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .section-courses .courses-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
